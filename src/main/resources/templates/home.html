@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html th:replace="layout/mainLayout :: layout(~{::main})" xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<main role="main">
+<div th:replace="fragments/dashboard.html :: dashboard"></div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <div th:replace="fragments/postTable.html :: postTable"></div>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
+
+</main>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<section th:fragment="postTable">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <div class="card-header">
+            <h3>Latest Post</h3>
+          </div>
+          <table class="table table-striped">
+            <thead>
+            <tr>
+              <th>Id</th>
+              <th>Title</th>
+              <th>Body</th>
+              <th>DatePosted</th>
+              <th>Category</th>
+              <th>User</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="po :${posts}">
+              <td th:text="${po.id}"></td>
+              <td th:text="${po.title}"></td>
+              <td th:text="${#strings.substring(po.body,0,7)}"></td>
+              <td th:text="${po.datePosted}"></td>
+              <td th:text="${po.category.title}"></td>
+              <td th:text="${po.users.name}"></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+</html>

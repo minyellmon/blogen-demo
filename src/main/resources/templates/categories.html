@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html th:replace="layout/mainLayout :: layout(~{::main})" xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<main role="main">
+  <header class="py-3 bg-success text-white">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h1><i class="fas fa-folder mr-2"></i> Categories</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section class="py-4 bg-light mb-5">
+     <div class="container">
+       <div class="row">
+         <div class="col-md-6 offset-md-6">
+           <div class="input-group">
+             <input type="text" class="form-control">
+             <div class="input-group-append">
+               <a href="#" class="btn btn-success">Search</a>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <div class="card-header">
+              <h3>Latest Categories</h3>
+            </div>
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Id</th>
+                  <th>Title</th>
+                  <th>Date Posted</th>
+                </tr>
+              </thead>
+              <tbody>
+              <tr th:each="cat : ${categories}">
+                <td th:text="${cat.id}"></td>
+                <td th:text="${cat.title}"></td>
+                <td th:text="${cat.datePosted}"></td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+</body>
+</html>
